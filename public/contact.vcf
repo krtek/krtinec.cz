@@ -1,0 +1,9 @@
+BEGIN:VCARD
+VERSION:4.0
+FN:Lukáš Marek
+N:Marek;Lukáš;;;
+BDAY:--1225
+GENDER:M
+EMAIL;TYPE=work:lukas.marek@statsperform.com
+TEL;TYPE=cell:(420)777929407
+END:VCARD
