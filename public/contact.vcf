@@ -1,9 +1,11 @@
 BEGIN:VCARD
 VERSION:4.0
-FN:Lukáš Marek
-N:Marek;Lukáš;;;
+FN;CHARSET=UTF-8:Lukáš Marek
+N;CHARSET=UTF-8:Marek;Lukáš;;;
 BDAY:--1225
 GENDER:M
+EMAIL;TYPE=personal:lukas.marek@pm.me
 EMAIL;TYPE=work:lukas.marek@statsperform.com
 TEL;TYPE=cell:(420)777929407
+ORG:StatsPerform;
 END:VCARD
