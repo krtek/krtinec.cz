@@ -5,6 +5,7 @@
 <svelte:head>
 	<title>Lukáš Marek | krtinec.cz</title>
 	<meta name="description" content="Personal page of a skilled IT professional" />
+	<meta name="theme-color" content="#dbeafe" />
 </svelte:head>
 
 <main class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 px-4 py-12">
