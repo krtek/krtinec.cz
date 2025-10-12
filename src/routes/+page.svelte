@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Lukáš Marek - krtinec.cz</title>
+	<title>Lukáš Marek | krtinec.cz</title>
 	<meta name="description" content="Personal page of a skilled IT professional" />
 </svelte:head>
 
@@ -55,11 +55,6 @@
 					Bluesky
 				</a>
 			</div>
-		</div>
-
-		<!-- Footer -->
-		<div class="mt-12 text-center text-gray-500">
-			<p>&copy; 2025 Lukáš Marek. All rights reserved.</p>
 		</div>
 	</div>
 </main>
