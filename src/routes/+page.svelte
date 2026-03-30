@@ -22,6 +22,30 @@
 			<p class="text-xl font-medium text-gray-600">Full-stack developer, engineering manager</p>
 		</div>
 
+		<!-- Blog link -->
+		<div class="mb-8 text-center">
+			<a
+				href="/blog"
+				class="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-gray-700 shadow-md transition-colors duration-200 hover:bg-blue-50 hover:shadow-lg"
+			>
+				<svg class="h-5 w-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l6 6v8a2 2 0 01-2 2z"
+					/>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M17 20v-8H7v8M7 4v4h6"
+					/>
+				</svg>
+				Archiv článků
+			</a>
+		</div>
+
 		<!-- Contact & Social Links -->
 		<div class="p-8">
 			<div class="flex flex-col items-center justify-center gap-6 sm:flex-row">

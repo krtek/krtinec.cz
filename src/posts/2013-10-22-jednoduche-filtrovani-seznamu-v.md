@@ -1,0 +1,62 @@
+---
+title: Jednoduché filtrování seznamů v AngularJS
+date: '2013-10-22'
+lang: cs
+tags:
+  - javascript
+  - angularjs
+---
+
+V našem posledním projektu chceme (čistě v Javascriptu) mít vyhledávací
+filtr nad seznamem objektů.
+
+Jenže objekty můžou obsahovat vnořené objekty, které obsahují vnořené
+objekty s dalšími vnořenými objekty – chápete, kam mířím?
+
+V první verzi jsme si hráli s rekurzí, procházeli properties objektu,
+přeskakovali funkce atd. atd.
+
+Ne že by to nefungovalo, ale je to spousta kódu, který se špatně čte,
+určitě je v něm nějaká chyba a jistě se už našel někdo, kdo to napsal
+líp.
+
+No jasně – a byl to ten chlápek co psal `JSON.stringify()`!
+
+Když se postavíme na ramena obrů a použijeme JSON (a
+[Underscore.JS](http://underscorejs.org/)), tak se s vyhledáváním
+dostaneme na 5 řádek jednoduchého kódu.
+
+Když přidáme vyhledávání podle více klíčových slov, validace vstupů a
+možnost ignorovat některé properties objektu, tak jsme pořád na 22.
+řádcích:
+
+```coffeescript
+angular.module("filters", [])
+    .filter('matchAllToProperties', () ->
+        return (input, query, exclude) ->
+            if not input or not query
+                return input
+
+            bits = (b.toLowerCase() for b in query.split(' ') when b isnt ' ')
+
+            filtered = []
+
+            for item in input
+                item_copy = angular.copy(item)
+
+                #Remove fields in which we don't want to search
+                _.each(exclude, (prop)-> delete item_copy[prop])
+
+                json = JSON.stringify(item_copy).toLowerCase()
+                if _.every(bits, (bit) -> json.indexOf(bit) > 0)
+                    filtered.push(item)
+
+            return filtered
+    )
+```
+
+Řídíme se zásadou, že jedno [demo](http://plnkr.co/edit/vDzh0i?p=preview) řekne víc než tisíc
+slov. Hezké hraní.
+
+A kdyby náhodou, tak zbytek kódu je na
+[Githubu](https://gist.github.com/krtek/7010022).
