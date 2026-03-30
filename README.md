@@ -1,38 +1,48 @@
-# sv
+# krtinec.cz
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Personal website and blog for [krtinec.cz](https://krtinec.cz), built with SvelteKit 5 and Tailwind CSS v4. Deployed to Vercel.
 
-## Creating a project
+## Stack
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **[SvelteKit 5](https://kit.svelte.dev/)** — framework (Svelte 5 rune syntax)
+- **[Tailwind CSS v4](https://tailwindcss.com/)** — utility-first styling
+- **[Vite 7](https://vite.dev/)** — build tool
+- **[gray-matter](https://github.com/jonschlinkert/gray-matter)** — YAML frontmatter parsing
+- **[marked](https://marked.js.org/)** — Markdown to HTML rendering
+- **[Vercel Analytics](https://vercel.com/analytics)** — traffic analytics
 
-```sh
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Development
 
 ```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+npm install       # install dependencies
+npm run dev       # start dev server at http://localhost:5173
 ```
 
-## Building
+## Commands
 
-To create a production version of your app:
+| Command           | Description                      |
+| ----------------- | -------------------------------- |
+| `npm run dev`     | Start Vite dev server            |
+| `npm run build`   | Production build                 |
+| `npm run preview` | Preview production build locally |
+| `npm run check`   | Type-check with svelte-check     |
+| `npm run lint`    | Prettier check + ESLint          |
+| `npm run format`  | Format all files with Prettier   |
 
-```sh
-npm run build
+## Blog Posts
+
+Posts live in `src/posts/` as Markdown files with YAML frontmatter:
+
+```yaml
+---
+title: Post title
+date: 2024-01-01
+lang: cs # 'cs' (Czech) or 'en' (English)
+tags: [foo, bar]
+---
+Post content here...
 ```
 
-You can preview the production build with `npm run preview`.
+## Deployment
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Deployed automatically to [Vercel](https://vercel.com) on push to `main` via `@sveltejs/adapter-auto`.
