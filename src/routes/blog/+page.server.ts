@@ -1,6 +1,10 @@
-import { readdirSync, readFileSync } from 'fs';
-import { join } from 'path';
 import matter from 'gray-matter';
+
+const modules = import.meta.glob('/src/posts/*.md', {
+	eager: true,
+	query: '?raw',
+	import: 'default'
+});
 
 export interface PostMeta {
 	slug: string;
@@ -11,13 +15,10 @@ export interface PostMeta {
 }
 
 export function load() {
-	const postsDir = join(process.cwd(), 'src/posts');
-	const files = readdirSync(postsDir).filter((f) => f.endsWith('.md'));
-
-	const posts: PostMeta[] = files.map((filename) => {
-		const raw = readFileSync(join(postsDir, filename), 'utf-8');
-		const { data } = matter(raw);
+	const posts: PostMeta[] = Object.entries(modules).map(([path, raw]) => {
+		const filename = path.split('/').pop()!;
 		const slug = filename.replace(/\.md$/, '');
+		const { data } = matter(raw as string);
 		return {
 			slug,
 			title: data.title ?? slug,

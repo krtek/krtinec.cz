@@ -1,17 +1,17 @@
-import { readFileSync } from 'fs';
-import { join } from 'path';
 import matter from 'gray-matter';
 import { marked } from 'marked';
 import { error } from '@sveltejs/kit';
 
-export function load({ params }: { params: { slug: string } }) {
-	const postsDir = join(process.cwd(), 'src/posts');
-	const filePath = join(postsDir, `${params.slug}.md`);
+const modules = import.meta.glob('/src/posts/*.md', {
+	eager: true,
+	query: '?raw',
+	import: 'default'
+});
 
-	let raw: string;
-	try {
-		raw = readFileSync(filePath, 'utf-8');
-	} catch {
+export function load({ params }: { params: { slug: string } }) {
+	const raw = modules[`/src/posts/${params.slug}.md`] as string | undefined;
+
+	if (!raw) {
 		throw error(404, 'Post not found');
 	}
 
