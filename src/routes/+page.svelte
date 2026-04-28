@@ -1,103 +1,229 @@
-<script>
-	// You can add any interactive functionality here if needed
-</script>
-
 <svelte:head>
 	<title>Lukáš Marek | krtinec.cz</title>
 	<meta name="description" content="Personal page of a skilled IT professional" />
-	<meta name="theme-color" content="#dbeafe" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+	<meta name="theme-color" content="#f5f4f0" media="(prefers-color-scheme: light)" />
+	<meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)" />
 </svelte:head>
 
-<main class="min-h-screen bg-blue-50 px-4 py-12">
-	<div class="mx-auto max-w-4xl">
-		<!-- Hero Section -->
-		<div class="mb-12 text-center">
-			<img
-				src="/hero.png"
-				alt="Profile"
-				class="mx-auto mb-6 h-32 w-32 rounded-full border-4 border-white object-cover shadow-lg"
-			/>
-			<h1 class="mb-4 text-4xl font-bold text-gray-800 md:text-5xl">Lukáš Marek</h1>
-			<p class="text-xl font-medium text-gray-600">Full-stack developer, engineering manager</p>
+<main class="page-root">
+	<div class="page-inner">
+		<!-- ── Prompt line ──────────────────────────────────────────── -->
+		<div class="prompt animate-fade-up" style="animation-delay: 0ms">
+			<span class="prompt-symbol">~/krtinec.cz</span>
+			<span class="prompt-cursor">▋</span>
 		</div>
 
-		<!-- Blog link -->
-		<div class="mb-8 text-center">
-			<a
-				href="/blog"
-				class="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-gray-700 shadow-md transition-colors duration-200 hover:bg-blue-50 hover:shadow-lg"
-			>
-				<svg class="h-5 w-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						stroke-width="2"
-						d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l6 6v8a2 2 0 01-2 2z"
-					/>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						stroke-width="2"
-						d="M17 20v-8H7v8M7 4v4h6"
-					/>
-				</svg>
-				Archiv článků
-			</a>
-		</div>
-
-		<!-- Contact & Social Links -->
-		<div class="p-8">
-			<div class="flex flex-col items-center justify-center gap-6 sm:flex-row">
-				<!-- LinkedIn -->
-				<a
-					href="https://linkedin.com/in/krtek"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="flex items-center gap-3 rounded-lg bg-blue-600 px-6 py-3 text-white shadow-md transition-colors duration-200 hover:bg-blue-700 hover:shadow-lg"
-				>
-					<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-						<path
-							fill-rule="evenodd"
-							d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
-							clip-rule="evenodd"
-						/>
-					</svg>
-					LinkedIn
-				</a>
-
-				<!-- GitHub -->
-				<a
-					href="https://github.com/krtek"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="flex items-center gap-3 rounded-lg bg-gray-800 px-6 py-3 text-white shadow-md transition-colors duration-200 hover:bg-gray-900 hover:shadow-lg"
-				>
-					<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-						<path
-							fill-rule="evenodd"
-							d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z"
-							clip-rule="evenodd"
-						/>
-					</svg>
-					GitHub
-				</a>
-
-				<!-- Bluesky -->
-				<a
-					href="https://bsky.app/profile/krtinec.cz"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="flex items-center gap-3 rounded-lg bg-sky-500 px-6 py-3 text-white shadow-md transition-colors duration-200 hover:bg-sky-600 hover:shadow-lg"
-				>
-					<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-						<path
-							d="M12 2.5C8.5 2.5 5.5 4.5 3.5 7.5C1.5 10.5 1 14 2 17C3 20 6 21.5 12 21.5C18 21.5 21 20 22 17C23 14 22.5 10.5 20.5 7.5C18.5 4.5 15.5 2.5 12 2.5Z"
-						/>
-					</svg>
-					Bluesky
-				</a>
+		<!-- ── Identity block ───────────────────────────────────────── -->
+		<div class="identity animate-fade-up" style="animation-delay: 80ms">
+			<div class="avatar-wrap">
+				<img src="/hero.png" alt="Lukáš Marek" class="avatar" />
+			</div>
+			<div class="identity-text">
+				<h1 class="name">Lukáš Marek</h1>
+				<p class="role">Full-stack developer &amp; engineering manager</p>
 			</div>
 		</div>
+
+		<!-- ── Divider ───────────────────────────────────────────────── -->
+		<div class="divider animate-fade-up" style="animation-delay: 160ms"></div>
+
+		<!-- ── Links block ──────────────────────────────────────────── -->
+		<nav class="links animate-fade-up" style="animation-delay: 240ms">
+			<!-- eslint-disable svelte/no-navigation-without-resolve -->
+			<a href="/blog" class="nav-link">
+				<span class="nav-arrow">//</span>
+				<span>Archiv článků</span>
+			</a>
+
+			<a
+				href="https://linkedin.com/in/krtek"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="nav-link"
+			>
+				<span class="nav-arrow">→</span>
+				<span>LinkedIn</span>
+			</a>
+
+			<a href="https://github.com/krtek" target="_blank" rel="noopener noreferrer" class="nav-link">
+				<span class="nav-arrow">→</span>
+				<span>GitHub</span>
+			</a>
+
+			<a
+				href="https://bsky.app/profile/krtinec.cz"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="nav-link"
+			>
+				<span class="nav-arrow">→</span>
+				<span>Bluesky</span>
+			</a>
+			<!-- eslint-enable svelte/no-navigation-without-resolve -->
+		</nav>
+
+		<!-- ── Footer ───────────────────────────────────────────────── -->
+		<footer class="page-footer animate-fade-up" style="animation-delay: 320ms">
+			<span class="footer-comment">/* krtinec.cz */</span>
+		</footer>
 	</div>
 </main>
+
+<style>
+	.page-root {
+		min-height: 100svh;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 6vw, 4rem);
+	}
+
+	.page-inner {
+		width: 100%;
+		max-width: 680px;
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+	}
+
+	/* ── Prompt ───────────────────────────────────────────────── */
+
+	.prompt {
+		font-family: 'Ubuntu Mono', monospace;
+		font-size: 0.8rem;
+		color: var(--fg-faint);
+		letter-spacing: 0.02em;
+		margin-bottom: 2.5rem;
+		display: flex;
+		align-items: center;
+		gap: 0;
+	}
+
+	.prompt-symbol {
+		color: var(--accent);
+		opacity: 0.7;
+	}
+
+	.prompt-cursor {
+		color: var(--accent);
+		animation: blink 1.2s step-end infinite;
+		line-height: 1;
+		margin-left: 2px;
+	}
+
+	/* ── Identity ─────────────────────────────────────────────── */
+
+	.identity {
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+		margin-bottom: 2rem;
+	}
+
+	.avatar-wrap {
+		flex-shrink: 0;
+		position: relative;
+	}
+
+	.avatar {
+		width: 56px;
+		height: 56px;
+		border-radius: 50%;
+		object-fit: cover;
+		border: 2px solid var(--border);
+		filter: grayscale(20%);
+		opacity: 0.9;
+	}
+
+	.identity-text {
+		display: flex;
+		flex-direction: column;
+		gap: 0.3rem;
+	}
+
+	.name {
+		font-family: 'Ubuntu Mono', monospace;
+		font-size: clamp(2rem, 5vw, 3rem);
+		font-weight: 700;
+		color: var(--fg);
+		letter-spacing: -0.02em;
+		line-height: 1;
+		margin: 0;
+	}
+
+	.role {
+		font-family: 'Ubuntu', sans-serif;
+		font-size: 0.95rem;
+		font-weight: 300;
+		color: var(--fg-muted);
+		margin: 0;
+		letter-spacing: 0.01em;
+	}
+
+	/* ── Divider ──────────────────────────────────────────────── */
+
+	.divider {
+		height: 1px;
+		background: linear-gradient(to right, var(--border), transparent);
+		margin-bottom: 2rem;
+	}
+
+	/* ── Nav links ────────────────────────────────────────────── */
+
+	.links {
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+		margin-bottom: 3rem;
+	}
+
+	.nav-link {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		font-family: 'Ubuntu Mono', monospace;
+		font-size: 0.95rem;
+		color: var(--fg-muted);
+		padding: 0.65rem 0;
+		border-bottom: 1px solid var(--border-faint);
+		transition:
+			color 0.15s ease,
+			padding-left 0.15s ease;
+		position: relative;
+	}
+
+	.nav-link:first-child {
+		border-top: 1px solid var(--border-faint);
+	}
+
+	.nav-link:hover {
+		color: var(--fg);
+		padding-left: 0.5rem;
+	}
+
+	.nav-link:hover .nav-arrow {
+		color: var(--accent);
+	}
+
+	.nav-arrow {
+		font-family: 'Ubuntu Mono', monospace;
+		font-size: 0.85rem;
+		color: var(--fg-faint);
+		transition: color 0.15s ease;
+		width: 1.8rem;
+		flex-shrink: 0;
+	}
+
+	/* ── Footer ───────────────────────────────────────────────── */
+
+	.page-footer {
+		margin-top: auto;
+	}
+
+	.footer-comment {
+		font-family: 'Ubuntu Mono', monospace;
+		font-size: 0.75rem;
+		color: var(--fg-faint);
+		letter-spacing: 0.02em;
+	}
+</style>
