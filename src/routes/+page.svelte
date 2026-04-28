@@ -84,6 +84,12 @@
 		}
 	}
 
+	@media (min-width: 1024px) {
+		.page-root {
+			justify-content: center;
+		}
+	}
+
 	.page-inner {
 		width: 100%;
 		max-width: 680px;
