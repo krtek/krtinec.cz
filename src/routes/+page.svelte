@@ -73,9 +73,15 @@
 	.page-root {
 		min-height: 100svh;
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: flex-start;
 		padding: clamp(1.5rem, 5vw, 4rem) clamp(1.5rem, 6vw, 4rem);
+	}
+
+	@media (min-width: 640px) {
+		.page-root {
+			align-items: center;
+		}
 	}
 
 	.page-inner {
