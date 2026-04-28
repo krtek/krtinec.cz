@@ -75,7 +75,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
-		padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 6vw, 4rem);
+		padding: clamp(1.5rem, 5vw, 4rem) clamp(1.5rem, 6vw, 4rem);
 	}
 
 	.page-inner {
