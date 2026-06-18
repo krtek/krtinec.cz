@@ -30,6 +30,21 @@
 		}
 	];
 
+	const patentPosts = [
+		{
+			title: 'Systems and methods for generating summaries of sporting events using large language models',
+			date: '2025',
+			url: 'https://patents.google.com/patent/US20250307692A1',
+			tags: ['patent', 'pending']
+		},
+		{
+			title: 'System and Method for Real-Time Minting and Enrichment of Sports Data',
+			date: '2024',
+			url: 'https://patents.google.com/patent/US20240070770A1',
+			tags: ['patent', 'pending']
+		}
+	];
+
 	const rootPosts = [
 		{
 			title: 'Programování pro Android: začátky s UI',
@@ -74,7 +89,7 @@
 				<span class="back-arrow">←</span>
 				krtinec.cz
 			</a>
-			<h1 class="page-title">Archiv článků</h1>
+			<h1 class="page-title">Archiv</h1>
 		</div>
 
 		<!-- ── Section: helveti.cz ─────────────────────────────────── -->
@@ -86,6 +101,32 @@
 				<!-- eslint-disable svelte/no-navigation-without-resolve svelte/require-each-key -->
 				{#each helvetiPosts as post, i}
 					<li class="post-row animate-fade-up" style="animation-delay: {120 + i * 40}ms">
+						<a href={post.url} target="_blank" rel="noopener noreferrer" class="post-link">
+							<span class="post-title">{post.title}</span>
+							<span class="post-meta">
+								<span class="post-date">{post.date}</span>
+								<span class="post-tags">
+									{#each post.tags as tag}
+										<span class="tag">#{tag}</span>
+									{/each}
+								</span>
+							</span>
+						</a>
+					</li>
+				{/each}
+				<!-- eslint-enable svelte/no-navigation-without-resolve svelte/require-each-key -->
+			</ul>
+		</section>
+
+		<!-- ── Section: patents ───────────────────────────────────── -->
+		<section class="section animate-fade-up" style="animation-delay: 180ms">
+			<h2 class="section-label">
+				<span class="label-comment">// </span>patents.google.com
+			</h2>
+			<ul class="post-list">
+				<!-- eslint-disable svelte/no-navigation-without-resolve svelte/require-each-key -->
+				{#each patentPosts as post, i}
+					<li class="post-row animate-fade-up" style="animation-delay: {220 + i * 40}ms">
 						<a href={post.url} target="_blank" rel="noopener noreferrer" class="post-link">
 							<span class="post-title">{post.title}</span>
 							<span class="post-meta">
